@@ -33,7 +33,7 @@ export function HeroVideo({ poster }: HeroVideoProps) {
       {/* scale-110 hides the soft edge introduced by the blur filter */}
       <Image
         alt="Paisaje del Valle del Cauca"
-        className="h-full w-full scale-110 object-cover blur-sm"
+        className="h-full w-full scale-110 object-cover blur-[2px]"
         fill
         priority
         sizes="100vw"
@@ -43,7 +43,7 @@ export function HeroVideo({ poster }: HeroVideoProps) {
         <video
           aria-hidden="true"
           autoPlay
-          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-90 blur-sm"
+          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-95 blur-[2px]"
           key={videos[activeVideo]}
           muted
           onEnded={() =>
