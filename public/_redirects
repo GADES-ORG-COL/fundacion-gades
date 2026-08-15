@@ -1,5 +1,0 @@
-# Redirección forzada: .pages.dev → dominio personalizado
-# Cloudflare Pages lee este archivo automáticamente
-
-https://fundacion-gades.pages.dev/* https://fundaciongades.com/:splat 301!
-https://www.fundacion-gades.pages.dev/* https://www.fundaciongades.com/:splat 301!
