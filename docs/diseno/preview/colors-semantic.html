@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 16px; background: #fff; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .item { border-radius: var(--radius-md); overflow: hidden; }
+  .bar { height: 8px; }
+  .content { padding: 8px 10px; border: 1px solid #eee; border-top: none; }
+  .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+  .desc { font-size: 10px; color: #666; }
+  .sample { margin-top: 6px; padding: 5px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="grid">
+  <div class="item">
+    <div class="bar" style="background:#1A5CA8"></div>
+    <div class="content">
+      <div class="label" style="color:#1A5CA8">Primary</div>
+      <div class="desc">CTAs, headings, key UI</div>
+      <span class="sample" style="background:#1A5CA8;color:#fff">Acción</span>
+    </div>
+  </div>
+  <div class="item">
+    <div class="bar" style="background:#4F8C1E"></div>
+    <div class="content">
+      <div class="label" style="color:#4F8C1E">Secondary</div>
+      <div class="desc">Accents, success, environment</div>
+      <span class="sample" style="background:#4F8C1E;color:#fff">Verde</span>
+    </div>
+  </div>
+  <div class="item">
+    <div class="bar" style="background:#04617B"></div>
+    <div class="content">
+      <div class="label" style="color:#04617B">Accent</div>
+      <div class="desc">Dark headers, callouts</div>
+      <span class="sample" style="background:#04617B;color:#fff">Teal</span>
+    </div>
+  </div>
+  <div class="item">
+    <div class="bar" style="background:#44546A"></div>
+    <div class="content">
+      <div class="label" style="color:#44546A">Muted</div>
+      <div class="desc">Secondary text, captions</div>
+      <span class="sample" style="background:#44546A;color:#fff">Texto</span>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: #fff; font-family: var(--font-body); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
+  .label-section { font-size: 10px; color: #999; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; width: 100%; margin-bottom: 4px; }
+  .badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 2px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-family: var(--font-heading); }
+  .badge-blue { background: #1A5CA8; color: #fff; }
+  .badge-green { background: #4F8C1E; color: #fff; }
+  .badge-teal { background: #04617B; color: #fff; }
+  .badge-blue-light { background: #DBF5F9; color: #04617B; }
+  .badge-green-light { background: #e8f5d6; color: #3A6614; }
+  .badge-gray { background: #E7E6E6; color: #44546A; }
+  .badge-outline-blue { background: transparent; color: #1A5CA8; border: 1.5px solid #1A5CA8; }
+  .badge-outline-green { background: transparent; color: #4F8C1E; border: 1.5px solid #4F8C1E; }
+  .pill { border-radius: 999px; }
+</style>
+</head>
+<body>
+  <div class="label-section">Sólidos</div>
+  <div class="row">
+    <span class="badge badge-blue">Ambiental</span>
+    <span class="badge badge-green">Social</span>
+    <span class="badge badge-teal">Infraestructura</span>
+    <span class="badge badge-gray">Inactivo</span>
+  </div>
+  <div class="label-section">Suaves</div>
+  <div class="row">
+    <span class="badge badge-blue-light">En ejecución</span>
+    <span class="badge badge-green-light">Completado</span>
+  </div>
+  <div class="label-section">Outline / Pill</div>
+  <div class="row">
+    <span class="badge badge-outline-blue pill">Palmira</span>
+    <span class="badge badge-outline-green pill">Valle del Cauca</span>
+    <span class="badge badge-gray pill">Nacional</span>
+  </div>
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: #fff; font-family: var(--font-body); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+  .group { display: flex; flex-direction: column; gap: 8px; }
+  .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #999; margin-bottom: 2px; }
+  /* Button base */
+  .btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heading); font-weight: 600; font-size: .875rem; padding: 9px 20px; border-radius: var(--radius-sm); border: 2px solid transparent; cursor: pointer; letter-spacing: .01em; transition: all .15s; white-space: nowrap; }
+  .btn-primary { background: #1A5CA8; color: #fff; border-color: #1A5CA8; }
+  .btn-primary:hover { background: #0F3F78; border-color: #0F3F78; }
+  .btn-secondary { background: #4F8C1E; color: #fff; border-color: #4F8C1E; }
+  .btn-secondary:hover { background: #3A6614; border-color: #3A6614; }
+  .btn-outline { background: transparent; color: #1A5CA8; border-color: #1A5CA8; }
+  .btn-outline:hover { background: #1A5CA8; color: #fff; }
+  .btn-ghost { background: transparent; color: #44546A; border-color: transparent; }
+  .btn-ghost:hover { background: #f0f0f0; }
+  .btn-sm { padding: 5px 12px; font-size: .8rem; }
+  .btn-lg { padding: 13px 28px; font-size: 1rem; }
+  .btn:disabled { opacity: .45; cursor: not-allowed; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="group">
+    <div class="label">Primario</div>
+    <button class="btn btn-primary">Consultar</button>
+    <button class="btn btn-primary btn-sm">Pequeño</button>
+    <button class="btn btn-primary btn-lg">Grande</button>
+    <button class="btn btn-primary" disabled>Deshabilitado</button>
+  </div>
+  <div class="group">
+    <div class="label">Secundario</div>
+    <button class="btn btn-secondary">Más información</button>
+    <button class="btn btn-outline">Outline</button>
+    <button class="btn btn-ghost">Ghost</button>
+  </div>
+</div>
+</body></html>

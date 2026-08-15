@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: #fff; font-family: var(--font-body); }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .group { display: flex; flex-direction: column; gap: 10px; min-width: 200px; }
+  .field-label { font-size: .75rem; font-weight: 600; color: #44546A; margin-bottom: 3px; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: .05em; }
+  input, select, textarea {
+    font-family: var(--font-body);
+    font-size: .875rem;
+    color: #1A1A1A;
+    background: #fff;
+    border: 1.5px solid #E7E6E6;
+    border-radius: 2px;
+    padding: 8px 12px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color .15s;
+  }
+  input:focus, select:focus, textarea:focus { border-color: #1A5CA8; }
+  input.error { border-color: #C0392B; }
+  .error-msg { font-size: .72rem; color: #C0392B; margin-top: 3px; }
+  textarea { resize: vertical; min-height: 64px; }
+  .checkbox-row { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: #44546A; cursor: pointer; }
+  input[type="checkbox"] { width: auto; accent-color: #1A5CA8; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="group">
+    <div>
+      <div class="field-label">Nombre completo</div>
+      <input type="text" placeholder="Ej. Carlos Rodríguez">
+    </div>
+    <div>
+      <div class="field-label">Correo electrónico</div>
+      <input type="email" placeholder="correo@entidad.gov.co">
+    </div>
+    <div>
+      <div class="field-label">Campo con error</div>
+      <input type="text" class="error" value="Valor inválido">
+      <div class="error-msg">Este campo es requerido</div>
+    </div>
+  </div>
+  <div class="group">
+    <div>
+      <div class="field-label">Área de trabajo</div>
+      <select>
+        <option>Capacitación Ambiental</option>
+        <option>Protección de Cuencas</option>
+        <option>Saneamiento Básico</option>
+        <option>Línea Empresarial</option>
+      </select>
+    </div>
+    <div>
+      <div class="field-label">Mensaje</div>
+      <textarea placeholder="Describa su consulta o proyecto..."></textarea>
+    </div>
+    <label class="checkbox-row">
+      <input type="checkbox" checked>
+      Acepto los términos y condiciones
+    </label>
+  </div>
+</div>
+</body></html>

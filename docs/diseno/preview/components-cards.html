@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 16px; background: #F5F5F5; font-family: var(--font-body); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .card { background: #fff; border-radius: var(--radius-md); overflow: hidden; width: 180px; box-shadow: 0 1px 4px rgba(26,92,168,.1); }
+  .card-header { background: #1A5CA8; color: #fff; padding: 10px 12px; font-family: var(--font-heading); font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .07em; }
+  .card-header.green { background: #4F8C1E; }
+  .card-header.teal { background: #04617B; }
+  .card-body { padding: 12px; }
+  .card-title { font-size: .9rem; font-weight: 600; color: #1A5CA8; margin: 0 0 4px; font-family: var(--font-heading); }
+  .card-text { font-size: .78rem; color: #44546A; line-height: 1.45; margin: 0; }
+  .card-metric { font-size: 1.6rem; font-weight: 700; color: #1A5CA8; font-family: var(--font-heading); line-height: 1; }
+  .card-metric-label { font-size: .7rem; color: #767676; text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+  .card-footer { border-top: 1px solid #E7E6E6; padding: 8px 12px; font-size: .75rem; color: #4F8C1E; font-weight: 600; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="card">
+    <div class="card-header">Línea de Trabajo</div>
+    <div class="card-body">
+      <p class="card-title">Capacitación Ambiental</p>
+      <p class="card-text">Proyectos de educación ambiental y apoyo a procesos comunitarios.</p>
+    </div>
+    <div class="card-footer">Ver proyectos →</div>
+  </div>
+  <div class="card">
+    <div class="card-header green">Impacto</div>
+    <div class="card-body">
+      <div class="card-metric">11,578</div>
+      <div class="card-metric-label">Beneficiarios directos</div>
+      <p class="card-text" style="margin-top:6px">Niños, jóvenes, campesinos, afrocolombianos e indígenas.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header teal">Proyecto</div>
+    <div class="card-body">
+      <p class="card-title">Protección de Cuencas</p>
+      <p class="card-text">Control de torrentes, reforestación y aislamiento de nacimientos de agua.</p>
+    </div>
+    <div class="card-footer">Más info →</div>
+  </div>
+</div>
+</body></html>

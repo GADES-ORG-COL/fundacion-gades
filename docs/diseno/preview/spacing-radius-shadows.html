@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: #F5F5F5; font-family: var(--font-body); }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+  /* Radius showcase */
+  .radius-row { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; }
+  .radius-box { width: 52px; height: 52px; background: #1A5CA8; display: flex; align-items: center; justify-content: center; }
+  .radius-label { font-size: 10px; color: #999; text-align: center; margin-top: 4px; font-family: monospace; }
+  .radius-item { text-align: center; }
+  /* Shadow showcase */
+  .shadow-row { display: flex; gap: 16px; align-items: flex-end; }
+  .shadow-box { width: 72px; height: 48px; background: #fff; display: flex; align-items: center; justify-content: center; }
+  .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: #999; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <div class="section-label">Border Radius</div>
+  <div class="radius-row">
+    <div class="radius-item"><div class="radius-box" style="border-radius:0"></div><div class="radius-label">0<br>none</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:2px"></div><div class="radius-label">2px<br>sm</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:4px"></div><div class="radius-label">4px<br>md</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:8px"></div><div class="radius-label">8px<br>lg</div></div>
+    <div class="radius-item"><div class="radius-box" style="border-radius:999px;width:72px"></div><div class="radius-label">999px<br>pill</div></div>
+  </div>
+  <div class="section-label">Elevation / Shadows</div>
+  <div class="shadow-row">
+    <div class="radius-item"><div class="shadow-box" style="box-shadow:0 1px 3px rgba(26,92,168,.10)"></div><div class="radius-label">shadow-sm</div></div>
+    <div class="radius-item"><div class="shadow-box" style="box-shadow:0 4px 12px rgba(26,92,168,.12)"></div><div class="radius-label">shadow-md</div></div>
+    <div class="radius-item"><div class="shadow-box" style="box-shadow:0 8px 24px rgba(26,92,168,.15)"></div><div class="radius-label">shadow-lg</div></div>
+  </div>
+</body></html>

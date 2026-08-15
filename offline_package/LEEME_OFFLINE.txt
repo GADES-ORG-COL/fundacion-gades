@@ -1,0 +1,25 @@
+GADES - Version Offline (sin internet)
+======================================
+
+Esta carpeta permite ver la pagina web sin internet de forma sencilla.
+
+MAC (facil):
+1) Haz doble clic en: Abrir_GADES.command
+2) Se abrira una ventana de Terminal (dejala abierta).
+3) El navegador predeterminado se abrira automaticamente en: http://localhost:8080
+
+WINDOWS (facil):
+1) Haz doble clic en: Abrir_GADES_WINDOWS.bat
+2) Se abrira una ventana de consola (dejala abierta).
+3) El navegador predeterminado se abrira automaticamente en: http://localhost:8080
+
+Para cerrar:
+- Vuelve a la ventana de Terminal o consola y presiona Ctrl + C.
+
+Notas rapidas:
+- En Mac suele funcionar con python3.
+- En Windows suele funcionar con python o py.
+- Si no abre automaticamente, copia y pega en navegador: http://localhost:8080
+- Si el puerto 8080 esta ocupado, usa:
+  python3 -m http.server 8081
+  y abre: http://localhost:8081

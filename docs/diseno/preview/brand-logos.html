@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 20px 24px; background: #F5F5F5; font-family: var(--font-body); }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .logo-block { background: #fff; padding: 20px 28px; border-radius: 4px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .logo-block.dark { background: #1A5CA8; }
+  .logo-block img { max-height: 64px; }
+  .logo-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #999; }
+  .logo-block.dark .logo-label { color: rgba(255,255,255,.6); }
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="logo-block">
+    <img src="../assets/logo_text.png" alt="GADES wordmark">
+    <div class="logo-label">Wordmark — Fondo claro</div>
+  </div>
+  <div class="logo-block dark">
+    <img src="../assets/logo_text.png" alt="GADES wordmark" style="filter:brightness(10) saturate(0)">
+    <div class="logo-label">Wordmark — Fondo oscuro</div>
+  </div>
+  <div class="logo-block">
+    <img src="../assets/logo_symbol.png" alt="GADES symbol" style="max-height:72px">
+    <div class="logo-label">Símbolo / Ícono</div>
+  </div>
+</div>
+</body></html>

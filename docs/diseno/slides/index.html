@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GADES — Plantilla de Presentación</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+  /* ---- Tokens ---- */
+  :root {
+    --blue:       #1A5CA8;
+    --blue-dark:  #0F3F78;
+    --blue-mid:   #0F6FC6;
+    --green:      #4F8C1E;
+    --teal:       #04617B;
+    --gray-dark:  #44546A;
+    --gray:       #E7E6E6;
+    --white:      #FFFFFF;
+    --font-h:     'Barlow Semi Condensed', sans-serif;
+    --font-b:     'Barlow', sans-serif;
+  }
+
+  /* ---- Slide base ---- */
+  section {
+    width: 1280px; height: 720px;
+    position: relative;
+    font-family: var(--font-b);
+    background: var(--white);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  /* ---- Shared header bar ---- */
+  .slide-header {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 8px; background: var(--blue);
+  }
+  .slide-header.green { background: var(--green); }
+  .slide-header.teal  { background: var(--teal);  }
+
+  /* ---- Shared footer ---- */
+  .slide-footer {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 52px; background: var(--blue);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px;
+  }
+  .footer-logo { display: flex; align-items: center; gap: 10px; }
+  .footer-logo img { height: 30px; filter: brightness(10) saturate(0); }
+  .footer-brand { font-family: var(--font-h); font-weight: 700; color: rgba(255,255,255,.9); font-size: .8rem; letter-spacing: .03em; }
+  .footer-tagline { font-size: .7rem; color: rgba(255,255,255,.65); font-family: var(--font-b); }
+  .footer-url { font-size: .7rem; color: rgba(255,255,255,.6); font-family: var(--font-b); }
+
+  /* ===== SLIDE 1: PORTADA / TITLE ===== */
+  #slide-title {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 60%, var(--teal) 100%);
+  }
+  #slide-title .slide-header { background: var(--green); height: 6px; }
+  #slide-title .title-content {
+    position: absolute; top: 50%; left: 80px; transform: translateY(-50%);
+    max-width: 700px;
+  }
+  #slide-title .eyebrow {
+    font-family: var(--font-h); font-size: .75rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .14em;
+    color: rgba(255,255,255,.7); margin-bottom: 16px;
+  }
+  #slide-title h1 {
+    font-family: var(--font-h); font-size: 3.2rem; font-weight: 700;
+    color: #fff; line-height: 1.1; margin: 0 0 16px;
+  }
+  #slide-title .subtitle {
+    font-size: 1.1rem; color: rgba(255,255,255,.82); line-height: 1.5;
+    font-weight: 300; max-width: 560px;
+  }
+  #slide-title .logos-panel {
+    position: absolute; right: 80px; top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  #slide-title .logos-panel img { max-height: 90px; filter: brightness(10) saturate(0); opacity: .85; }
+  #slide-title .logos-panel .brand-name {
+    font-family: var(--font-h); font-size: 1.1rem; font-weight: 700;
+    color: #fff; text-align: center; letter-spacing: .04em;
+  }
+  #slide-title .slide-footer { background: rgba(0,0,0,.25); }
+
+  /* ===== SLIDE 2: AGENDA / INDEX ===== */
+  #slide-agenda .content {
+    position: absolute; top: 60px; left: 80px; right: 80px; bottom: 72px;
+  }
+  #slide-agenda .section-label {
+    font-family: var(--font-h); font-size: .7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em; color: var(--green);
+    margin-bottom: 8px;
+  }
+  #slide-agenda h2 {
+    font-family: var(--font-h); font-size: 2rem; font-weight: 700;
+    color: var(--blue); margin: 0 0 32px; line-height: 1.1;
+  }
+  #slide-agenda .agenda-list {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px 40px;
+    list-style: none; margin: 0; padding: 0;
+  }
+  #slide-agenda .agenda-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 16px; border-left: 3px solid var(--blue);
+    background: #F5F7FB;
+  }
+  #slide-agenda .agenda-num {
+    font-family: var(--font-h); font-size: 1.6rem; font-weight: 700;
+    color: var(--blue); opacity: .25; line-height: 1; flex-shrink: 0;
+  }
+  #slide-agenda .agenda-text { font-size: .95rem; font-weight: 600; color: var(--gray-dark); font-family: var(--font-h); line-height: 1.3; }
+  #slide-agenda .agenda-sub { font-size: .78rem; color: #767676; margin-top: 3px; font-weight: 400; }
+
+  /* ===== SLIDE 3: SECTION HEADER ===== */
+  #slide-section {
+    background: var(--blue);
+  }
+  #slide-section .slide-header { background: var(--green); }
+  #slide-section .section-content {
+    position: absolute; top: 50%; left: 80px; transform: translateY(-50%);
+  }
+  #slide-section .section-num {
+    font-family: var(--font-h); font-size: 5rem; font-weight: 700;
+    color: rgba(255,255,255,.1); line-height: 1; margin-bottom: -12px;
+  }
+  #slide-section h2 {
+    font-family: var(--font-h); font-size: 2.8rem; font-weight: 700;
+    color: #fff; margin: 0 0 12px; line-height: 1.1;
+  }
+  #slide-section .section-desc {
+    font-size: 1rem; color: rgba(255,255,255,.75); max-width: 520px;
+    line-height: 1.55;
+  }
+  #slide-section .green-bar {
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 320px; background: var(--green);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #slide-section .green-bar img { max-height: 120px; opacity: .8; }
+  #slide-section .slide-footer { background: rgba(0,0,0,.2); }
+
+  /* ===== SLIDE 4: CONTENT / TWO-COL ===== */
+  #slide-content .content {
+    position: absolute; top: 60px; left: 80px; right: 80px; bottom: 72px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  }
+  #slide-content .col-header {
+    font-family: var(--font-h); font-size: .65rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em; color: var(--green);
+    margin-bottom: 6px;
+  }
+  #slide-content h3 {
+    font-family: var(--font-h); font-size: 1.5rem; font-weight: 700;
+    color: var(--blue); margin: 0 0 16px; line-height: 1.2;
+  }
+  #slide-content .bullet-list { list-style: none; margin: 0; padding: 0; }
+  #slide-content .bullet-item {
+    display: flex; gap: 10px; margin-bottom: 10px;
+    font-size: .88rem; color: var(--gray-dark); line-height: 1.45;
+  }
+  #slide-content .bullet-dot {
+    width: 6px; height: 6px; background: var(--blue); border-radius: 50%;
+    flex-shrink: 0; margin-top: 6px;
+  }
+  #slide-content .divider { border: none; border-top: 2px solid var(--gray); margin: 0 0 20px; }
+
+  /* ===== SLIDE 5: METRICS / STATS ===== */
+  #slide-metrics .content {
+    position: absolute; top: 60px; left: 80px; right: 80px; bottom: 72px;
+  }
+  #slide-metrics h2 {
+    font-family: var(--font-h); font-size: 1.8rem; font-weight: 700;
+    color: var(--blue); margin: 0 0 32px;
+  }
+  #slide-metrics .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  #slide-metrics .stat-card {
+    background: #F5F7FB; padding: 24px 20px; text-align: center;
+    border-top: 4px solid var(--blue);
+  }
+  #slide-metrics .stat-card.green { border-top-color: var(--green); }
+  #slide-metrics .stat-card.teal  { border-top-color: var(--teal);  }
+  #slide-metrics .stat-num {
+    font-family: var(--font-h); font-size: 2.6rem; font-weight: 700;
+    color: var(--blue); line-height: 1;
+  }
+  #slide-metrics .stat-card.green .stat-num { color: var(--green); }
+  #slide-metrics .stat-card.teal  .stat-num { color: var(--teal);  }
+  #slide-metrics .stat-label { font-size: .8rem; color: var(--gray-dark); margin-top: 8px; line-height: 1.35; font-weight: 600; font-family: var(--font-h); }
+  #slide-metrics .stat-sub { font-size: .72rem; color: #767676; margin-top: 4px; }
+
+  /* ===== SLIDE 6: IMAGE / PHOTO FULL ===== */
+  #slide-photo {
+    background: var(--blue-dark);
+  }
+  #slide-photo .photo-bg {
+    position: absolute; inset: 0;
+    background-image: url('../assets/raw/image5.jpeg');
+    background-size: cover; background-position: center;
+    opacity: .4;
+  }
+  #slide-photo .overlay-panel {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 420px; background: rgba(26,92,168,.92);
+    padding: 60px 48px; display: flex; flex-direction: column; justify-content: center;
+  }
+  #slide-photo .section-label {
+    font-family: var(--font-h); font-size: .68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.6);
+    margin-bottom: 12px;
+  }
+  #slide-photo h2 {
+    font-family: var(--font-h); font-size: 2rem; font-weight: 700;
+    color: #fff; margin: 0 0 16px; line-height: 1.15;
+  }
+  #slide-photo p {
+    font-size: .9rem; color: rgba(255,255,255,.8); line-height: 1.6; margin: 0 0 24px;
+  }
+  #slide-photo .quote {
+    border-left: 3px solid var(--green); padding-left: 16px;
+    font-size: 1rem; font-style: italic; color: rgba(255,255,255,.9); line-height: 1.5;
+  }
+  #slide-photo .slide-header { background: var(--green); }
+  #slide-photo .slide-footer { background: rgba(0,0,0,.4); }
+</style>
+</head>
+<body>
+<deck-stage>
+
+  <!-- SLIDE 1: PORTADA -->
+  <section id="slide-title" data-screen-label="01 Portada">
+    <div class="slide-header"></div>
+    <div class="title-content">
+      <div class="eyebrow">Presentación Institucional · 2024</div>
+      <h1>Las acciones de hoy<br>construyen el mañana</h1>
+      <p class="subtitle">Consultoría técnica y social especializada en formulación, gestión y ejecución de proyectos de desarrollo económico, infraestructura y sostenibilidad ambiental.</p>
+    </div>
+    <div class="logos-panel">
+      <img src="../assets/logo_symbol.png" alt="GADES">
+      <div class="brand-name">Fundación<br>GADES</div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: AGENDA -->
+  <section id="slide-agenda" data-screen-label="02 Agenda">
+    <div class="slide-header"></div>
+    <div class="content">
+      <div class="section-label">Contenido</div>
+      <h2>Agenda de la Presentación</h2>
+      <ul class="agenda-list">
+        <li class="agenda-item">
+          <span class="agenda-num">01</span>
+          <div><div class="agenda-text">Antecedentes y Constitución</div><div class="agenda-sub">Historia y registro institucional</div></div>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-num">02</span>
+          <div><div class="agenda-text">Misión y Visión</div><div class="agenda-sub">Objetivos estratégicos</div></div>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-num">03</span>
+          <div><div class="agenda-text">Áreas de Trabajo</div><div class="agenda-sub">Capacitación, cuencas, saneamiento, empresarial</div></div>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-num">04</span>
+          <div><div class="agenda-text">Impacto y Beneficiarios</div><div class="agenda-sub">Resultados cuantificados</div></div>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-num">05</span>
+          <div><div class="agenda-text">Experiencia Interinstitucional</div><div class="agenda-sub">19 acuerdos con entidades públicas y privadas</div></div>
+        </li>
+        <li class="agenda-item">
+          <span class="agenda-num">06</span>
+          <div><div class="agenda-text">Contacto y Propuesta</div><div class="agenda-sub">Cómo trabajar con GADES</div></div>
+        </li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: SECTION HEADER -->
+  <section id="slide-section" data-screen-label="03 Sección">
+    <div class="slide-header"></div>
+    <div class="section-content">
+      <div class="section-num">01</div>
+      <h2>Antecedentes<br>Institucionales</h2>
+      <p class="section-desc">Más de 27 años de experiencia en gestión ambiental y desarrollo social en el Valle del Cauca y a nivel nacional.</p>
+    </div>
+    <div class="green-bar">
+      <img src="../assets/logo_symbol.png" alt="GADES">
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: TWO-COL CONTENT -->
+  <section id="slide-content" data-screen-label="04 Misión y Visión">
+    <div class="slide-header"></div>
+    <div class="content">
+      <div class="left-col">
+        <div class="col-header">Misión Institucional</div>
+        <h3>Generamos dinámicas de cualificación comunitaria</h3>
+        <hr class="divider">
+        <ul class="bullet-list">
+          <li class="bullet-item"><span class="bullet-dot"></span>Resolución de conflictos comunitarios y convivencia armónica</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Procesos con enfoques productivos social y técnicamente viables</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Económicamente rentables y ambientalmente sostenibles</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Construcción de tejido social en ecoregiones estratégicas</li>
+        </ul>
+      </div>
+      <div class="right-col">
+        <div class="col-header">Visión</div>
+        <h3>Los mejores facilitadores de desarrollo humano</h3>
+        <hr class="divider">
+        <ul class="bullet-list">
+          <li class="bullet-item"><span class="bullet-dot"></span>Fortalecimiento de movimientos sociales</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Mejoramiento de niveles de convivencia</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Formas de producción sostenible y protección ambiental</li>
+          <li class="bullet-item"><span class="bullet-dot"></span>Cobertura en eco regiones estratégicas del territorio nacional</li>
+        </ul>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 5: METRICS -->
+  <section id="slide-metrics" data-screen-label="05 Impacto">
+    <div class="slide-header green"></div>
+    <div class="content">
+      <h2>Impacto y Resultados</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">11,578</div>
+          <div class="stat-label">Beneficiarios directos</div>
+          <div class="stat-sub">Niños, jóvenes, campesinos, afrocolombianos e indígenas</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-num">19</div>
+          <div class="stat-label">Acuerdos interinstitucionales</div>
+          <div class="stat-sub">Entidades públicas y privadas</div>
+        </div>
+        <div class="stat-card teal">
+          <div class="stat-num">27+</div>
+          <div class="stat-label">Años de experiencia</div>
+          <div class="stat-sub">Desde 1997 en Valle del Cauca</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Líneas de trabajo</div>
+          <div class="stat-sub">Capacitación, cuencas, saneamiento, empresarial</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+  <!-- SLIDE 6: PHOTO + QUOTE -->
+  <section id="slide-photo" data-screen-label="06 Foto">
+    <div class="photo-bg"></div>
+    <div class="slide-header"></div>
+    <div class="overlay-panel">
+      <div class="section-label">Trabajo de Campo</div>
+      <h2>Comunidades fortalecidas, territorios sostenibles</h2>
+      <p>Trabajamos directamente con comunidades rurales, campesinos e indígenas para implementar soluciones de gestión ambiental con impacto real.</p>
+      <div class="quote">"Las acciones de ayer hicieron posible los resultados que mostramos hoy."</div>
+    </div>
+    <div class="slide-footer">
+      <div class="footer-logo">
+        <img src="../assets/logo_symbol.png" alt="">
+        <span class="footer-brand">Fundación GADES</span>
+      </div>
+      <span class="footer-url">www.fundaciongades.org.co</span>
+    </div>
+  </section>
+
+</deck-stage>
+</body>
+</html>

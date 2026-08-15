@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://www.fundaciongades.org.co
+Sitemap: https://www.fundaciongades.org.co/sitemap.xml

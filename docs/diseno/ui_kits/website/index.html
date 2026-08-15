@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundación GADES — Sitio Web</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue:        #1A5CA8;
+    --blue-dark:   #0F3F78;
+    --blue-mid:    #0F6FC6;
+    --blue-light:  #5B9BD5;
+    --blue-pale:   #EEF4FB;
+    --green:       #4F8C1E;
+    --green-dark:  #3A6614;
+    --teal:        #04617B;
+    --gray-dark:   #44546A;
+    --gray:        #767676;
+    --gray-light:  #E7E6E6;
+    --gray-pale:   #F5F7FB;
+    --white:       #FFFFFF;
+    --dark:        #1A1A1A;
+    --font-h: 'Barlow Semi Condensed', sans-serif;
+    --font-b: 'Barlow', sans-serif;
+  }
+  body { font-family: var(--font-b); color: var(--dark); background: var(--white); font-size: 16px; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; max-width: 100%; }
+
+  /* ---- NAV ---- */
+  .navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--blue); height: 60px;
+    display: flex; align-items: center; padding: 0 40px;
+    gap: 0; box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; margin-right: 36px; cursor: pointer; }
+  .nav-brand img { height: 34px; }
+  .nav-brand-text { font-family: var(--font-h); font-weight: 700; color: #fff; font-size: .95rem; letter-spacing: .02em; line-height: 1.2; }
+  .nav-brand-sub { font-size: .65rem; color: rgba(255,255,255,.65); font-weight: 400; }
+  .nav-links { display: flex; gap: 2px; flex: 1; }
+  .nav-link {
+    font-family: var(--font-h); font-size: .82rem; font-weight: 500;
+    color: rgba(255,255,255,.85); padding: 0 16px; height: 60px;
+    display: flex; align-items: center; cursor: pointer; transition: background .15s;
+  }
+  .nav-link:hover, .nav-link.active { background: rgba(255,255,255,.12); color: #fff; }
+  .nav-cta {
+    background: var(--green); color: #fff; padding: 8px 18px;
+    font-family: var(--font-h); font-size: .82rem; font-weight: 700;
+    border-radius: 2px; cursor: pointer; transition: background .15s;
+  }
+  .nav-cta:hover { background: var(--green-dark); }
+
+  /* ---- HERO ---- */
+  .hero {
+    position: relative; min-height: 560px;
+    background: linear-gradient(120deg, var(--blue) 0%, var(--blue-dark) 55%, var(--teal) 100%);
+    display: flex; align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('../../assets/raw/image6.jpeg');
+    background-size: cover; background-position: center 30%;
+    opacity: .18;
+  }
+  .hero-content { position: relative; z-index: 1; padding: 80px 80px 80px; max-width: 760px; }
+  .hero-eyebrow {
+    font-family: var(--font-h); font-size: .72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .14em;
+    color: rgba(255,255,255,.65); margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: var(--font-h); font-size: 3rem; font-weight: 700;
+    color: #fff; line-height: 1.1; margin-bottom: 18px;
+  }
+  .hero h1 span { color: #7CCA62; }
+  .hero p {
+    font-size: 1.1rem; color: rgba(255,255,255,.82); line-height: 1.6;
+    font-weight: 300; margin-bottom: 32px; max-width: 580px;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-hero-primary {
+    background: var(--green); color: #fff;
+    font-family: var(--font-h); font-weight: 700; font-size: .9rem;
+    padding: 13px 28px; border-radius: 2px; cursor: pointer;
+    transition: background .15s; border: none;
+  }
+  .btn-hero-primary:hover { background: var(--green-dark); }
+  .btn-hero-outline {
+    background: transparent; color: #fff;
+    font-family: var(--font-h); font-weight: 600; font-size: .9rem;
+    padding: 12px 26px; border-radius: 2px; cursor: pointer;
+    border: 2px solid rgba(255,255,255,.5); transition: border-color .15s;
+  }
+  .btn-hero-outline:hover { border-color: #fff; }
+  .hero-stats {
+    position: absolute; bottom: 0; right: 0; left: 0;
+    background: rgba(255,255,255,.06); backdrop-filter: blur(4px);
+    display: flex; border-top: 1px solid rgba(255,255,255,.1);
+  }
+  .hero-stat {
+    flex: 1; padding: 20px 32px; border-right: 1px solid rgba(255,255,255,.1);
+    text-align: center;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-num { font-family: var(--font-h); font-size: 2rem; font-weight: 700; color: #fff; }
+  .hero-stat-label { font-size: .75rem; color: rgba(255,255,255,.65); margin-top: 3px; text-transform: uppercase; letter-spacing: .07em; }
+
+  /* ---- SECTION WRAPPER ---- */
+  .section { padding: 72px 80px; }
+  .section.gray { background: var(--gray-pale); }
+  .section.blue { background: var(--blue); }
+  .section-eyebrow {
+    font-family: var(--font-h); font-size: .7rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .12em; color: var(--green);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--font-h); font-size: 2rem; font-weight: 700;
+    color: var(--blue); margin-bottom: 12px; line-height: 1.15;
+  }
+  .section-title.white { color: #fff; }
+  .section-desc { font-size: 1rem; color: var(--gray-dark); line-height: 1.6; max-width: 620px; margin-bottom: 40px; }
+  .section-desc.white { color: rgba(255,255,255,.8); }
+
+  /* ---- SERVICES GRID ---- */
+  .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .service-card {
+    background: #fff; border-top: 4px solid var(--blue);
+    padding: 24px 20px; transition: box-shadow .2s;
+  }
+  .service-card:hover { box-shadow: 0 6px 20px rgba(26,92,168,.12); }
+  .service-card.green { border-top-color: var(--green); }
+  .service-card.teal  { border-top-color: var(--teal); }
+  .service-icon { width: 40px; height: 40px; background: var(--blue-pale); border-radius: 2px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
+  .service-card.green .service-icon { background: #EDF5E0; }
+  .service-card.teal  .service-icon { background: #E0EFF3; }
+  .service-icon svg { width: 22px; height: 22px; }
+  .service-title { font-family: var(--font-h); font-size: .95rem; font-weight: 700; color: var(--blue); margin-bottom: 8px; }
+  .service-card.green .service-title { color: var(--green); }
+  .service-card.teal  .service-title { color: var(--teal); }
+  .service-desc { font-size: .82rem; color: var(--gray-dark); line-height: 1.5; }
+
+  /* ---- ABOUT TWO-COL ---- */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .about-img { position: relative; }
+  .about-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .about-img-badge {
+    position: absolute; bottom: -16px; right: -16px;
+    background: var(--green); color: #fff; padding: 16px 20px; text-align: center;
+  }
+  .about-img-badge .num { font-family: var(--font-h); font-size: 2rem; font-weight: 700; line-height: 1; }
+  .about-img-badge .lbl { font-size: .7rem; text-transform: uppercase; letter-spacing: .07em; margin-top: 2px; }
+  .about-content {}
+  .about-content p { font-size: .95rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 16px; }
+  .about-bullets { list-style: none; margin: 0 0 24px; padding: 0; }
+  .about-bullet { display: flex; gap: 10px; font-size: .9rem; color: var(--gray-dark); margin-bottom: 8px; line-height: 1.4; }
+  .about-bullet::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+  .btn-primary {
+    background: var(--blue); color: #fff;
+    font-family: var(--font-h); font-weight: 600; font-size: .875rem;
+    padding: 10px 22px; border-radius: 2px; border: none; cursor: pointer;
+    transition: background .15s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--blue-dark); }
+
+  /* ---- IMPACT BANNER ---- */
+  .impact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+  .impact-item { background: rgba(255,255,255,.08); padding: 32px 24px; text-align: center; }
+  .impact-num { font-family: var(--font-h); font-size: 2.6rem; font-weight: 700; color: #fff; line-height: 1; }
+  .impact-label { font-size: .78rem; color: rgba(255,255,255,.7); margin-top: 8px; text-transform: uppercase; letter-spacing: .07em; line-height: 1.4; }
+
+  /* ---- PROJECTS ---- */
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .project-card { background: #fff; overflow: hidden; box-shadow: 0 2px 8px rgba(26,92,168,.08); }
+  .project-img { width: 100%; height: 180px; object-fit: cover; background: var(--gray-light); }
+  .project-body { padding: 20px; }
+  .project-tag {
+    display: inline-block; padding: 2px 8px;
+    background: var(--blue-pale); color: var(--blue);
+    font-family: var(--font-h); font-size: .68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .07em; margin-bottom: 8px;
+    border-radius: 2px;
+  }
+  .project-tag.green { background: #EDF5E0; color: var(--green); }
+  .project-tag.teal  { background: #E0EFF3; color: var(--teal); }
+  .project-title { font-family: var(--font-h); font-size: 1rem; font-weight: 700; color: var(--blue); margin-bottom: 8px; line-height: 1.3; }
+  .project-desc { font-size: .82rem; color: var(--gray-dark); line-height: 1.5; margin-bottom: 14px; }
+  .project-link { font-size: .8rem; font-weight: 700; color: var(--blue-mid); font-family: var(--font-h); cursor: pointer; }
+  .project-link:hover { text-decoration: underline; }
+
+  /* ---- CONTACT ---- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+  .contact-info {}
+  .contact-info p { font-size: .95rem; color: var(--gray-dark); line-height: 1.65; margin-bottom: 24px; }
+  .contact-detail { display: flex; gap: 10px; margin-bottom: 14px; font-size: .9rem; color: var(--gray-dark); }
+  .contact-detail strong { color: var(--blue); font-family: var(--font-h); min-width: 80px; }
+  .contact-form { display: flex; flex-direction: column; gap: 14px; }
+  .form-group label { font-family: var(--font-h); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-dark); display: block; margin-bottom: 4px; }
+  .form-group input, .form-group select, .form-group textarea {
+    font-family: var(--font-b); font-size: .875rem; color: var(--dark);
+    border: 1.5px solid var(--gray-light); background: #fff;
+    padding: 9px 12px; border-radius: 2px; width: 100%; outline: none;
+    transition: border-color .15s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+  .form-group textarea { min-height: 80px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    background: var(--blue-dark); padding: 48px 80px 24px;
+    color: rgba(255,255,255,.75);
+  }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .footer-brand-col {}
+  .footer-logo-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .footer-logo-row img { height: 36px; filter: brightness(10) saturate(0); opacity: .7; }
+  .footer-logo-name { font-family: var(--font-h); font-weight: 700; color: #fff; font-size: .95rem; }
+  .footer-tagline { font-size: .82rem; line-height: 1.5; color: rgba(255,255,255,.6); margin-bottom: 14px; }
+  .footer-col-title { font-family: var(--font-h); font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.5); margin-bottom: 14px; }
+  .footer-link { display: block; font-size: .84rem; color: rgba(255,255,255,.7); margin-bottom: 8px; cursor: pointer; transition: color .15s; }
+  .footer-link:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; font-size: .78rem; color: rgba(255,255,255,.4); }
+
+  /* ---- SCREEN MANAGEMENT ---- */
+  .screen { display: none; }
+  .screen.active { display: block; }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION (shared) -->
+<nav class="navbar">
+  <div class="nav-brand" onclick="showScreen('home')">
+    <img src="../../assets/logo_symbol.png" alt="GADES">
+    <div>
+      <div class="nav-brand-text">Fundación GADES</div>
+      <div class="nav-brand-sub">Gestión Ambiental y Desarrollo Social</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <span class="nav-link active" onclick="showScreen('home')">Inicio</span>
+    <span class="nav-link" onclick="showScreen('about')">Nosotros</span>
+    <span class="nav-link" onclick="showScreen('projects')">Proyectos</span>
+    <span class="nav-link" onclick="showScreen('services')">Servicios</span>
+    <span class="nav-link" onclick="showScreen('contact')">Contacto</span>
+  </div>
+  <span class="nav-cta" onclick="showScreen('contact')">Contáctenos</span>
+</nav>
+
+<!-- SCREEN: HOME -->
+<div class="screen active" id="screen-home">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Fundación GADES · Desde 1997</div>
+      <h1>Hacemos Gestión <span>Ambiental</span><br>con Responsabilidad Social</h1>
+      <p>Consultoría técnica y social especializada en formulación, gestión y ejecución de proyectos de desarrollo económico, infraestructura y sostenibilidad ambiental.</p>
+      <div class="hero-actions">
+        <button class="btn-hero-primary" onclick="showScreen('projects')">Ver Proyectos</button>
+        <button class="btn-hero-outline" onclick="showScreen('about')">Conocer GADES</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">11,578</div><div class="hero-stat-label">Beneficiarios</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">19</div><div class="hero-stat-label">Alianzas Institucionales</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">27+</div><div class="hero-stat-label">Años de Experiencia</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">4</div><div class="hero-stat-label">Líneas de Trabajo</div></div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section gray">
+    <div class="section-eyebrow">Lo que hacemos</div>
+    <div class="section-title">Nuestras Líneas de Trabajo</div>
+    <p class="section-desc">Trabajamos de manera integral en cuatro líneas estratégicas que responden a las necesidades de desarrollo ambiental, social y económico de las comunidades.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1A5CA8" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="service-title">Línea de Capacitación</div>
+        <p class="service-desc">Educación ambiental, turismo comunitario sostenible y evaluación de impactos ambientales.</p>
+      </div>
+      <div class="service-card green">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4F8C1E" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        </div>
+        <div class="service-title">Protección de Cuencas</div>
+        <p class="service-desc">Control de torrentes, reforestación urbana y rural, aislamiento de nacimientos de agua.</p>
+      </div>
+      <div class="service-card teal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#04617B" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div class="service-title">Saneamiento Básico</div>
+        <p class="service-desc">Proyectos de acueductos, alcantarillados y gestión de residuos sólidos rurales.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1A5CA8" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="service-title">Línea Empresarial</div>
+        <p class="service-desc">Gestión empresarial, transformación agroindustrial y proyectos agropecuarios sostenibles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About snippet -->
+  <section class="section">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="../../assets/raw/image5.jpeg" alt="Trabajo comunitario GADES" style="width:100%;height:320px;object-fit:cover;">
+        <div class="about-img-badge">
+          <div class="num">1997</div>
+          <div class="lbl">Fundación</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-eyebrow">Quiénes somos</div>
+        <h2 class="section-title" style="margin-bottom:16px">Una organización comprometida con el territorio</h2>
+        <p>Somos una Organización No Gubernamental sin ánimo de lucro, constituida en Palmira, Valle del Cauca. Con más de 27 años de trayectoria, hemos trabajado con comunidades rurales, entidades públicas y organismos internacionales para transformar territorios.</p>
+        <ul class="about-bullets">
+          <li class="about-bullet">Experiencia en interventoría y servicios de ingeniería</li>
+          <li class="about-bullet">Fortalecimiento comunitario para entidades públicas y privadas</li>
+          <li class="about-bullet">Clasificación: Pequeña Empresa · NIT 815.000.850-0</li>
+        </ul>
+        <button class="btn-primary" onclick="showScreen('about')">Conocer más →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="section blue">
+    <div class="section-eyebrow" style="color:#7CCA62">Nuestro impacto</div>
+    <h2 class="section-title white" style="margin-bottom:32px">Resultados que hablan por sí solos</h2>
+    <div class="impact-grid">
+      <div class="impact-item"><div class="impact-num">11,578</div><div class="impact-label">Beneficiarios directos</div></div>
+      <div class="impact-item"><div class="impact-num">19+</div><div class="impact-label">Alianzas institucionales</div></div>
+      <div class="impact-item"><div class="impact-num">27</div><div class="impact-label">Años de trayectoria</div></div>
+      <div class="impact-item"><div class="impact-num">8</div><div class="impact-label">Municipios atendidos</div></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand-col">
+        <div class="footer-logo-row">
+          <img src="../../assets/logo_symbol.png" alt="">
+          <div class="footer-logo-name">Fundación GADES</div>
+        </div>
+        <p class="footer-tagline">Hacemos Gestión Ambiental con Responsabilidad Social.<br>Organización No Gubernamental sin Ánimo de Lucro.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Servicios</div>
+        <a class="footer-link">Capacitación Ambiental</a>
+        <a class="footer-link">Protección de Cuencas</a>
+        <a class="footer-link">Saneamiento Básico</a>
+        <a class="footer-link">Línea Empresarial</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Organización</div>
+        <a class="footer-link" onclick="showScreen('about')">Nosotros</a>
+        <a class="footer-link" onclick="showScreen('projects')">Proyectos</a>
+        <a class="footer-link" onclick="showScreen('contact')">Contacto</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Contacto</div>
+        <a class="footer-link">Palmira, Valle del Cauca</a>
+        <a class="footer-link">3193375949</a>
+        <a class="footer-link">gadesinformacion@gmail.com</a>
+        <a class="footer-link">www.fundaciongades.org.co</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Fundación GADES · NIT 815.000.850-0</span>
+      <span>Palmira, Valle del Cauca, Colombia</span>
+    </div>
+  </footer>
+</div>
+
+<!-- SCREEN: ABOUT -->
+<div class="screen" id="screen-about">
+  <section class="section">
+    <div class="section-eyebrow">Quiénes somos</div>
+    <h1 class="section-title" style="font-size:2.4rem">Fundación GADES</h1>
+    <p class="section-desc">Más de 27 años construyendo desarrollo social y ambiental en el territorio colombiano.</p>
+    <div class="about-grid">
+      <div class="about-content">
+        <h3 style="font-family:var(--font-h);font-size:1.3rem;color:var(--blue);margin-bottom:12px">Misión Institucional</h3>
+        <p style="font-size:.95rem;color:var(--gray-dark);line-height:1.65;margin-bottom:20px">Generar dinámicas internas de cualificación de los facilitadores, para la resolución de conflictos comunitarios que propendan por la convivencia armónica, con enfoques productivos técnicamente viables, económicamente rentables y ambientalmente sostenibles.</p>
+        <h3 style="font-family:var(--font-h);font-size:1.3rem;color:var(--blue);margin-bottom:12px">Visión</h3>
+        <p style="font-size:.95rem;color:var(--gray-dark);line-height:1.65">Ser los mejores facilitadores de procesos relacionados con el fortalecimiento de movimientos sociales, el mejoramiento de los niveles de convivencia y el desarrollo humano en las eco regiones estratégicas del territorio nacional.</p>
+      </div>
+      <div>
+        <img src="../../assets/raw/image6.jpeg" alt="GADES en campo" style="width:100%;height:340px;object-fit:cover;margin-bottom:16px">
+        <div style="background:var(--gray-pale);padding:20px;">
+          <div style="font-family:var(--font-h);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gray);margin-bottom:10px">Datos Institucionales</div>
+          <div style="font-size:.85rem;color:var(--gray-dark);line-height:2">
+            <strong style="color:var(--blue)">NIT:</strong> 815.000.850-0<br>
+            <strong style="color:var(--blue)">Fundación:</strong> 22 de abril de 1997<br>
+            <strong style="color:var(--blue)">Clasificación:</strong> Pequeña Empresa<br>
+            <strong style="color:var(--blue)">Sede:</strong> Palmira, Valle del Cauca
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2024 Fundación GADES · NIT 815.000.850-0</span>
+      <span onclick="showScreen('home')" style="cursor:pointer;color:rgba(255,255,255,.6)">← Volver al inicio</span>
+    </div>
+  </footer>
+</div>
+
+<!-- SCREEN: PROJECTS -->
+<div class="screen" id="screen-projects">
+  <section class="section">
+    <div class="section-eyebrow">Portafolio</div>
+    <h1 class="section-title" style="font-size:2.4rem">Proyectos Ejecutados</h1>
+    <p class="section-desc">Una selección representativa de los proyectos desarrollados en nuestras cuatro líneas de trabajo.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="../../assets/raw/image4.jpeg" alt="" class="project-img">
+        <div class="project-body">
+          <span class="project-tag green">Línea Empresarial</span>
+          <div class="project-title">Sistema de Producción Agrícola Agroecológico</div>
+          <p class="project-desc">Hortalizas de ciclo corto y producción avícola con enfoque agroecológico para comunidades campesinas.</p>
+          <span class="project-link">Ver más →</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="../../assets/raw/image5.jpeg" alt="" class="project-img">
+        <div class="project-body">
+          <span class="project-tag">Capacitación</span>
+          <div class="project-title">Fortalecimiento Comunitario e Institucional</div>
+          <p class="project-desc">89 proyectos de capacitación con 3 beneficiarios directos organizacionales en ASOTRANIMA y Transformadores de Vida.</p>
+          <span class="project-link">Ver más →</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="../../assets/raw/image7.jpeg" alt="" class="project-img">
+        <div class="project-body">
+          <span class="project-tag teal">Protección de Cuencas</span>
+          <div class="project-title">Control de Torrentes y Reforestación</div>
+          <p class="project-desc">10 proyectos de control de erosión y torrentes con 237 beneficiarios directos en zonas rurales.</p>
+          <span class="project-link">Ver más →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2024 Fundación GADES</span>
+      <span onclick="showScreen('home')" style="cursor:pointer;color:rgba(255,255,255,.6)">← Volver al inicio</span>
+    </div>
+  </footer>
+</div>
+
+<!-- SCREEN: CONTACT -->
+<div class="screen" id="screen-contact">
+  <section class="section">
+    <div class="section-eyebrow">Trabaje con nosotros</div>
+    <h1 class="section-title" style="font-size:2.4rem">Contáctenos</h1>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Si su entidad o comunidad tiene necesidades en gestión ambiental, desarrollo social o ingeniería, contáctenos. Contamos con experiencia en el sector público y privado.</p>
+        <div class="contact-detail"><strong>Dirección:</strong> Palmira, Valle del Cauca, Colombia</div>
+        <div class="contact-detail"><strong>Celular:</strong> 319 337 5949</div>
+        <div class="contact-detail"><strong>Correo:</strong> gadesinformacion@gmail.com</div>
+        <div class="contact-detail"><strong>Web:</strong> www.fundaciongades.org.co</div>
+        <img src="../../assets/logo_text.png" alt="GADES" style="max-height:60px;margin-top:28px;opacity:.7">
+      </div>
+      <form class="contact-form" onsubmit="return false">
+        <div class="form-row">
+          <div class="form-group"><label>Nombre</label><input type="text" placeholder="Su nombre completo"></div>
+          <div class="form-group"><label>Entidad</label><input type="text" placeholder="Organización / Empresa"></div>
+        </div>
+        <div class="form-group"><label>Correo electrónico</label><input type="email" placeholder="correo@entidad.gov.co"></div>
+        <div class="form-group">
+          <label>Área de interés</label>
+          <select>
+            <option>Capacitación Ambiental</option>
+            <option>Protección de Cuencas</option>
+            <option>Saneamiento Básico</option>
+            <option>Línea Empresarial</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Mensaje</label><textarea placeholder="Describa su consulta o proyecto..."></textarea></div>
+        <button class="btn-primary" style="align-self:flex-start;padding:12px 28px">Enviar Consulta</button>
+      </form>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2024 Fundación GADES · NIT 815.000.850-0</span>
+      <span onclick="showScreen('home')" style="cursor:pointer;color:rgba(255,255,255,.6)">← Volver al inicio</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  const map = { home: 0, about: 1, projects: 2, services: 3, contact: 4 };
+  const links = document.querySelectorAll('.nav-link');
+  if (map[name] !== undefined && links[map[name]]) links[map[name]].classList.add('active');
+  window.scrollTo({ top: 0 });
+}
+</script>
+</body>
+</html>

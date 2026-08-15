@@ -1,0 +1,104 @@
+# Fundación GADES
+
+> Fundación para la Gestión Agroambiental y el Desarrollo Empresarial y Social.
+> ONG sin ánimo de lucro con sede en Palmira, Valle del Cauca, Colombia.
+> NIT 815.000.850-0. Constituida el 14 de febrero de 1997.
+
+Fundación GADES es un operador técnico y humano con 27 años de experiencia en
+gestión agroambiental, desarrollo empresarial y desarrollo social en el sur del
+Valle del Cauca, Colombia. Articula capital privado, recursos públicos y
+conocimiento técnico para proyectos de impacto territorial verificable.
+
+## Información institucional
+
+- Razón social: Fundación para la Gestión Agroambiental y el Desarrollo Empresarial y Social (GADES)
+- NIT: 815.000.850-0
+- Naturaleza jurídica: ONG sin ánimo de lucro
+- Fecha de constitución: 14 de febrero de 1997 (Escritura Pública No. 346, Notaría Tercera de Palmira)
+- Inscripción en Cámara de Comercio de Palmira: 24 de abril de 1997
+- Sede: Palmira, Valle del Cauca, Colombia
+- Área de influencia: 8 municipios del Valle del Cauca (Palmira, Candelaria, Pradera, Florida, El Cerrito, Guacarí, Darién, Ginebra)
+- Beneficiarios directos documentados: 11.578
+- Alianzas institucionales: más de 19
+
+## Líneas de acción
+
+### 1. Gestión agroambiental
+Proyectos de protección de cuencas hidrográficas, control de erosión y
+torrentes, reforestación y educación ambiental en el Valle del Cauca.
+Alineada con ODS 6, ODS 13 y ODS 15.
+
+### 2. Desarrollo empresarial
+Asistencia técnica, transformación agroindustrial y encadenamientos
+productivos para pequeños y medianos productores agropecuarios.
+Alineada con ODS 2 y ODS 8.
+
+### 3. Desarrollo social
+Capacitación, asesoría y acompañamiento comunitario para población
+urbana, rural y étnica. Enfoque diferencial para comunidades
+afrodescendientes e indígenas del sur del Valle del Cauca.
+Alineada con ODS 2, ODS 8 y ODS 17.
+
+## Marcos de referencia
+
+- ODS (Objetivos de Desarrollo Sostenible): ODS 2, 6, 8, 13, 15, 17
+- GRI (Global Reporting Initiative): referencia para reporte de sostenibilidad
+- ISO 14001: referencia para gestión ambiental
+- Pacto Global de las Naciones Unidas: principios de adhesión declarada
+
+*Adopción declarativa para encuadrar el reporte de impacto; no constituye
+certificación de tercera parte.*
+
+## Páginas principales
+
+- Inicio: https://www.fundaciongades.org.co/
+- Líneas de acción: https://www.fundaciongades.org.co/lineas-de-accion
+- Respaldo institucional: https://www.fundaciongades.org.co/respaldo
+- Contacto: https://www.fundaciongades.org.co/contacto
+- English: https://www.fundaciongades.org.co/en
+
+## Preguntas frecuentes
+
+### ¿Qué es Fundación GADES?
+Fundación GADES (Fundación para la Gestión Agroambiental y el Desarrollo
+Empresarial y Social) es una ONG colombiana sin ánimo de lucro con sede en
+Palmira, Valle del Cauca. Fue constituida en 1997 y cuenta con NIT
+815.000.850-0. Actúa como operador técnico y humano en tres líneas
+complementarias: gestión agroambiental, desarrollo empresarial y desarrollo
+social.
+
+### ¿Dónde opera Fundación GADES?
+Opera principalmente en 8 municipios del Valle del Cauca, Colombia: Palmira,
+Candelaria, Pradera, Florida, El Cerrito, Guacarí, Darién y Ginebra.
+
+### ¿Cuántos beneficiarios tiene Fundación GADES?
+Fundación GADES cuenta con 11.578 beneficiarios directos documentados y más
+de 19 alianzas institucionales activas.
+
+### ¿Cómo contactar a Fundación GADES?
+- Correo: gadesinformacion@gmail.com
+- Teléfono: +57 319 337 5949
+- Formulario de contacto: https://www.fundaciongades.org.co/contacto
+
+### ¿Qué estándares de sostenibilidad utiliza GADES?
+GADES alinea su reporte de impacto con el marco GRI, ISO 14001 y los
+principios del Pacto Global de las Naciones Unidas, y opera bajo los ODS 2,
+6, 8, 13, 15 y 17. Esta alineación es declarativa; no constituye
+certificación de tercera parte.
+
+### ¿Cómo apoyar o asociarse con Fundación GADES?
+Empresas e inversores privados pueden contactar a la fundación para explorar
+proyectos de mitigación de riesgos ambientales y sociales en la cadena
+agroindustrial del Valle del Cauca. Gobiernos y organizaciones multilaterales
+pueden postular proyectos de cooperación técnica y financiera.
+
+## Repositorio público
+
+El código fuente del sitio web está disponible en:
+https://github.com/GADES-ORG/WEB-PAGE
+
+## Contacto
+
+- Email: gadesinformacion@gmail.com
+- Teléfono: +57 319 337 5949
+- Dirección: Palmira, Valle del Cauca, Colombia

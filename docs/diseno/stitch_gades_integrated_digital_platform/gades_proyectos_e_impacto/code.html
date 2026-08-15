@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#1e5eaa",
+                        "on-secondary-fixed": "#0b2000",
+                        "on-tertiary-fixed": "#001f29",
+                        "tertiary-fixed-dim": "#8bd0ee",
+                        "on-primary-fixed-variant": "#004689",
+                        "surface": "#fcf9f8",
+                        "inverse-primary": "#a8c8ff",
+                        "secondary-fixed": "#b0f57b",
+                        "on-primary-fixed": "#001b3c",
+                        "on-secondary-container": "#377000",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#727782",
+                        "primary-container": "#1a5ca8",
+                        "surface-bright": "#fcf9f8",
+                        "on-secondary-fixed-variant": "#265100",
+                        "primary-fixed": "#d5e3ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#0c647e",
+                        "on-surface-variant": "#424751",
+                        "tertiary": "#004b60",
+                        "on-surface": "#1c1b1b",
+                        "primary": "#004486",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#c0d6ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#346b00",
+                        "tertiary-fixed": "#bbe9ff",
+                        "inverse-surface": "#313030",
+                        "inverse-on-surface": "#f3f0ef",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed-dim": "#95d862",
+                        "surface-container": "#f0eded",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#aef379",
+                        "outline-variant": "#c2c6d3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary-container": "#99dffd",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "on-background": "#1c1b1b",
+                        "surface-variant": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "unit": "8px",
+                        "xxl": "80px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Public Sans"],
+                        "h2": ["Public Sans"],
+                        "h1": ["Public Sans"],
+                        "h3": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "caption": ["Public Sans"],
+                        "label-bold": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; background-color: #fcf9f8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .impact-card { transition: all 0.2s ease-in-out; border: 1px solid #E7E6E6; }
+        .impact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(26, 92, 168, 0.08); }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar -->
+<header class="fixed w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+<div class="text-2xl font-bold tracking-tight text-blue-800 dark:text-blue-300">GADES</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 dark:text-slate-400 transition-colors hover:text-blue-700 dark:hover:text-blue-300" href="#">Inicio</a>
+<a class="text-slate-600 dark:text-slate-400 transition-colors hover:text-blue-700 dark:hover:text-blue-300" href="#">Quiénes Somos</a>
+<a class="text-slate-600 dark:text-slate-400 transition-colors hover:text-blue-700 dark:hover:text-blue-300" href="#">Líneas de Acción</a>
+<a class="text-blue-700 dark:text-blue-400 font-semibold border-b-2 border-blue-700 dark:border-blue-400 pb-1" href="#">Proyectos</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 dark:text-slate-400 transition-colors hover:text-blue-700 px-4 py-2 text-label-bold">Contactar</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg text-label-bold transition-all hover:opacity-90 active:scale-95 shadow-sm">Donar</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative py-xxl overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/5 -z-10"></div>
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8 text-center">
+<span class="text-secondary font-label-bold tracking-widest uppercase mb-4 block">Nuestro Legado</span>
+<h1 class="font-h1 text-h1 text-primary mb-6">Proyectos e Impacto Social</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Transformando el territorio a través de la gestión agroambiental y el desarrollo sostenible en el Valle del Cauca.
+                </p>
+</div>
+</section>
+<!-- Projects Gallery with Filters -->
+<section class="py-xxl bg-surface">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-xl gap-lg">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface mb-2">Galería de Iniciativas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Explora nuestras intervenciones actuales y trayectorias pasadas.</p>
+</div>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-bold">Todos</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold hover:bg-secondary-container transition-colors">Agroambiental</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold hover:bg-secondary-container transition-colors">Social</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold hover:bg-secondary-container transition-colors">Empresarial</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project 1 -->
+<div class="impact-card bg-white rounded-xl overflow-hidden flex flex-col">
+<div class="h-56 relative">
+<img class="w-full h-full object-cover" data-alt="hands of a farmer holding fertile dark soil with a small green seedling growing in a sunlit organic field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcxDWLpdP_pRK6u9eQ89FFjgscfXNhsL0fmmyWFai4K4vq7LyeCukX1qEZiZ1m81Ktv36K99vgC9UL92nZB03VIi3dOuNGxfEVbgHlfYAnkGAEecivBBLG9WLWBrwO4bRPemGr_xCa1pTUU4UPofQsD4zEHdbLpj-KLIImDvSlEvKYo7wu1zpgTY5iYHXVQ2ql9CWRx1F4zyL_jRE_wzpZOmJAHjUOVePpeOMk5yo0zqPM3bZ6_mZmhnQoZ9lQ4AOZzFcfMl32ilk"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-md text-caption font-semibold">ACTIVO</div>
+</div>
+<div class="p-lg flex-grow">
+<span class="text-secondary text-caption font-bold uppercase tracking-wider">Línea Agroambiental</span>
+<h3 class="font-h3 text-h3 text-on-surface mt-2 mb-3">Semillas de Paz: Valle del Cauca</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Fortalecimiento de la seguridad alimentaria en 15 municipios mediante huertas comunitarias.</p>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-label-bold">1,200 Beneficiarios</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="impact-card bg-white rounded-xl overflow-hidden flex flex-col">
+<div class="h-56 relative">
+<img class="w-full h-full object-cover" data-alt="aerial view of reforestation project in Colombia with diverse native tree species planted in a grid pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYroqF8ZqaXS4dgToA7WNRIakgU9JZqBFg0zmTz11MVI7R0GzMFmJ3i6tXhOe3h_MqqfxB5A9NkFpDCeIzGM2jE2TFoN38Y7iDadIhxrAuYxEw_9ZKR9kUv_09sjTyUNPNCmFGVNPuyKG-s3wWwM7t69IgV-ZzdPchgt653nYu47fYCBMb_DBCP0hQQj8Y4xFRxHhVEZSy1eKor__gZOPA9KWgImvxsj_cDfhB1-GoByqVsj2WOMtIbiW8LEpd_q_20orfmFb_1k"/>
+<div class="absolute top-4 left-4 bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-md text-caption font-semibold">FINALIZADO</div>
+</div>
+<div class="p-lg flex-grow">
+<span class="text-secondary text-caption font-bold uppercase tracking-wider">Gestión Ambiental</span>
+<h3 class="font-h3 text-h3 text-on-surface mt-2 mb-3">Corredores Biológicos Palmira</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Restauración de ecosistemas de cuenca media para la protección de fuentes hídricas locales.</p>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined">eco</span>
+<span class="text-label-bold">500 Hectáreas</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="impact-card bg-white rounded-xl overflow-hidden flex flex-col">
+<div class="h-56 relative">
+<img class="w-full h-full object-cover" data-alt="young local entrepreneur presenting organic produce in a clean warehouse with bright natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlp0EJsGONgLpfJtYW02egPVVUL-9eZqNpggkAQ7zUC3N6mePTGfcdTvMjtKgU768TBf5jv_n8osP-bxElG78wpnHIfGZXMFEs1Tx1BNsik-zbx8koQL3m_W9CojxFoO5dBhl9jdYwHP6hRZPHuf1qEaxgRSVcx8UPYqm63Rp5GSbHGDR74mQeUiXNVHgaoVug_OVQL99T8qfaUrWOctTIlaInzl85I_0NUP5datiWotwRppV4vLr6ZdeoVME9s_nHmdU3k-0KGOw"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-md text-caption font-semibold">ACTIVO</div>
+</div>
+<div class="p-lg flex-grow">
+<span class="text-secondary text-caption font-bold uppercase tracking-wider">Desarrollo Empresarial</span>
+<h3 class="font-h3 text-h3 text-on-surface mt-2 mb-3">Emprende Rural GADES</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Capacitación y mentoría para la formalización de microempresas rurales lideradas por jóvenes.</p>
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-label-bold">45 Nuevas Empresas</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Intervention Zones Map -->
+<section class="py-xxl bg-surface-container-low overflow-hidden">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div>
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Presencia en el Territorio</h2>
+<div class="space-y-md">
+<div class="flex items-start gap-4 p-md bg-white rounded-lg border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface">Valle del Cauca</h4>
+<p class="text-caption text-on-surface-variant">Sede principal en Palmira, con cobertura en Buga, Tuluá y Cartago.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-md bg-white rounded-lg border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">explore</span>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface">Zonas Priorizadas</h4>
+<p class="text-caption text-on-surface-variant">Intervención directa en áreas rurales dispersas y comunidades vulnerables.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-md bg-white rounded-lg border border-outline-variant/30">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary">diversity_3</span>
+</div>
+<div>
+<h4 class="font-label-bold text-on-surface">Impacto Regional</h4>
+<p class="text-caption text-on-surface-variant">Alianzas estratégicas con la academia y el sector privado departamental.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] bg-slate-200 rounded-2xl overflow-hidden shadow-inner group">
+<img class="w-full h-full object-cover" data-alt="abstract topographic map style visual representing the Valle del Cauca region with soft green and blue highlights" data-location="Palmira, Colombia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh3thjjyVQzGsqgIIl_yqNeNWIz2w8p8JqDO5mjn-GzTLygWUC2eX8OEa8UkLTob5-nNYsn4rYGCcpR-08G7Z2buDx-JmjhSis-QebE7YnX0Ek8D3xQmYEDHPMG7CF78gbr55DG5qIJZMxu9iSinQCzQ08i9D-Vmd6QL561QNzZdOEs99yRxeam2wS0JVl_qJGfSH3g6x_rTQqeohEsEYSKqesfq56DVdBEPINvcsZfNDVflV0V3XZ_S8vZgOxue4bPqqUOmKkOUg"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- Mock Map Pins -->
+<div class="absolute top-1/3 left-1/4 animate-bounce">
+<span class="material-symbols-outlined text-error text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-1/2 left-1/2">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute bottom-1/4 right-1/3">
+<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Bento Grid -->
+<section class="py-xxl bg-white">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<div class="text-center mb-xl">
+<h2 class="font-h2 text-h2 text-on-surface mb-4">Voces del Cambio</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">El impacto real medido a través de quienes viven la transformación.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Large Testimonial -->
+<div class="md:col-span-2 bg-secondary-container/20 rounded-2xl p-xl flex flex-col md:flex-row gap-lg items-center">
+<img class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-md" data-alt="portrait of a smiling Colombian coffee farmer in traditional hat with a sun-weathered face and kind eyes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRb5y1tEHcOwatWXiVbKQ3CCePquUhFgLYBrXTPuAlx54Iu_NsiCx1C-WM5H_8aJpF-3YmeyzC6l0nI7eCw8_pgLAALQZk8d7NhM0w4OcsdhAlbDkb6McBkpXYJjZXZzmJyQHbr4iNIe0bh68osBwvMZsHTYQJNu2xkPMi39WV8B_TzWRxJhkcdNyFswaJ-uFtmspp1eZixnLCQkqojjHq8vJMReiu14p3vnOUi9me9DNhQJ6YjXu_DoHlnY7ftDJcOnjgFwOz0o"/>
+<div>
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">format_quote</span>
+<p class="font-h3 text-h3 text-on-secondary-container mb-6 italic">"GADES no solo trajo herramientas, trajo esperanza. Aprendimos a ver nuestra tierra no como un gasto, sino como un futuro para mis nietos."</p>
+<div>
+<h4 class="font-label-bold text-on-surface">Don José Antonio Ramos</h4>
+<p class="text-caption text-on-surface-variant uppercase tracking-tighter">Beneficiario Huertas Comunitarias</p>
+</div>
+</div>
+</div>
+<!-- Small Testimonial 1 -->
+<div class="bg-surface-container p-lg rounded-2xl flex flex-col justify-between border border-outline-variant/50">
+<p class="font-body-md text-on-surface-variant mb-6 italic">"Gracias a la mentoría empresarial, mi pequeña asociación de lácteos ahora tiene registro sanitario y vendemos en Cali."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="close-up portrait of a young Colombian female entrepreneur with a confident and professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3VJnFUYPMOPo9a18FdqcwgRK18YX-c3bKybN-O9hDca_pOetg6i86jGTU7ILXZjaxMGSHnynSFYTpzg5O4lKC_YsHmyr1zCbKfpsX4ijV_deHUMq0NWJ00L2QJ1MgwAaIGwqdh7GrGlWfiyRFj5RyJRh32kP2GvAvhCogO72qEuq71liJFfmnQbZWN9LQPz2FBJxcw6rOt9OTbVRD1aIG6TrUsSrIn6PGbA9ecSNkZ1kSJU6BEBXcuqW7SNw5zE8PRZNQicSGkpE"/>
+<div>
+<h4 class="font-label-bold text-on-surface">Marta Lucía Díaz</h4>
+<p class="text-caption text-on-surface-variant">Emprendedora Rural</p>
+</div>
+</div>
+</div>
+<!-- Small Testimonial 2 -->
+<div class="bg-primary-container/10 p-lg rounded-2xl flex flex-col justify-between border border-primary/10">
+<p class="font-body-md text-on-surface-variant mb-6 italic">"El proyecto de reforestación nos enseñó que proteger el río es protegernos a nosotros mismos. El agua es vida."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a young adult environmental activist in Colombia with a passionate expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcP3Uoofeu8sKKeHqdid5a_KDLqPtWcRTyyuc1Am8gkEMRhFFvqJzdE9oZfJMtbBApu444rNQXX2KKMqmEzxNuN-TN0UU7UyuTKu7y99oz7myC9hCQ_FTuvJORFLHzNyQFnCmI4gNmixTDvAen_jq6gZnBWwhytUluBqZm2iK44XPECNF44yTQWen9pArAIdBLPB08ngo_Jf6MAxCAyv9cxWRYZqeTjum8hgI1uF4MhAVLlSS8QiQEpVrVOOnjfWTRVSzAB6Ap9Jg"/>
+<div>
+<h4 class="font-label-bold text-on-surface">Carlos Mario Vélez</h4>
+<p class="text-caption text-on-surface-variant">Líder Juvenil Ambiental</p>
+</div>
+</div>
+</div>
+<!-- Small Testimonial 3 -->
+<div class="bg-surface-container p-lg rounded-2xl flex flex-col justify-between border border-outline-variant/50">
+<p class="font-body-md text-on-surface-variant mb-6 italic">"La transparencia de GADES en la gestión de recursos es lo que nos motiva a seguir trabajando juntos."</p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="portrait of a local administrative partner wearing a casual shirt and smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXEl0me8ssxtwWr_NoLJVT_5FdN5h-4aDeyBmD1FmUnsegLx8XL_6b0igP5yLHNVr8NK46rUzKCVJTEPLOOpmzR9Nv6ZL0lbIRrWjB3FHxICRfIwrV9dOkUYCVp4nWz4q7VHmQoJhgEO1_wvS-UBaezr1Rga8eGZTCBPwtHfqBiDlV2ibWywujdn4TDGZhkvY408S4VU4FCp8LIIdeEMCTfcW_1nBICLKITzpc8dSamPsdkZKfvG_atTCT7zPpIXwYy4H3ijJz6F8"/>
+<div>
+<h4 class="font-label-bold text-on-surface">Ing. Ricardo Torres</h4>
+<p class="text-caption text-on-surface-variant">Aliado Institucional</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-xxl bg-surface">
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+<div class="bg-primary rounded-3xl p-xl md:p-xxl text-center text-on-primary shadow-xl relative overflow-hidden">
+<!-- Decoration -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-h2 text-h2 mb-6">Sé parte del cambio</h2>
+<p class="font-body-lg text-body-lg mb-xl max-w-xl mx-auto opacity-90">
+                            Tu apoyo puede multiplicar nuestro impacto. Ya sea como aliado, voluntario o donante, hay un lugar para ti en nuestra misión.
+                        </p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-white text-primary px-8 py-4 rounded-xl text-label-bold hover:bg-primary-fixed transition-colors shadow-lg">Contáctanos</button>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl text-label-bold hover:opacity-90 transition-opacity border border-white/20">Quiero Donar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-[1200px] mx-auto py-16 px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<div class="text-xl font-bold text-blue-800 dark:text-blue-300">GADES</div>
+<p class="font-body-md text-slate-500 dark:text-slate-400">Fundación para la Gestión Agroambiental y el Desarrollo Empresarial y Social.</p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-teal-600 transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-slate-400 hover:text-teal-600 transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-slate-400 hover:text-teal-600 transition-colors" href="#"><span class="material-symbols-outlined">work</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">Enlaces Rápidos</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 transition-colors" href="#">Ubicación</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 transition-colors" href="#">Contacto</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 transition-colors" href="#">Líneas de Acción</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 transition-colors" href="#">Proyectos</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-label-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">Sede Palmira</h4>
+<div class="flex items-start gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm mt-1">location_on</span>
+<p class="font-body-md">Calle 32 # 25 - 45, Barrio Centro<br/>Palmira, Valle del Cauca, Colombia</p>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-sm">mail</span>
+<p class="font-body-md">contacto@gades.org.co</p>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="font-body-md text-sm text-slate-500 dark:text-slate-400">© 2024 GADES - Palmira, Colombia. Fundación para la Gestión Agroambiental y el Desarrollo Empresarial y Social.</p>
+</div>
+</footer>
+</body></html>

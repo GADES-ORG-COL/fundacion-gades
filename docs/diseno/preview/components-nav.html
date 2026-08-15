@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body { margin: 0; padding: 0; background: #fff; font-family: var(--font-body); }
+  nav { display: flex; align-items: center; gap: 0; background: #1A5CA8; padding: 0 24px; height: 52px; }
+  .nav-logo { display: flex; align-items: center; gap: 8px; margin-right: 32px; }
+  .nav-logo img { height: 32px; }
+  .nav-logo span { color: #fff; font-family: var(--font-heading); font-weight: 700; font-size: 1rem; letter-spacing: .02em; }
+  .nav-links { display: flex; gap: 2px; flex: 1; }
+  .nav-link { color: rgba(255,255,255,.85); font-size: .82rem; font-weight: 500; padding: 0 14px; height: 52px; display: flex; align-items: center; text-decoration: none; transition: background .15s; font-family: var(--font-heading); }
+  .nav-link:hover, .nav-link.active { background: rgba(255,255,255,.12); color: #fff; }
+  .nav-cta { background: #4F8C1E; color: #fff; padding: 7px 16px; border-radius: 2px; font-size: .8rem; font-weight: 700; font-family: var(--font-heading); margin-left: 8px; text-decoration: none; }
+  .nav-cta:hover { background: #3A6614; color: #fff; }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-logo">
+      <img src="../assets/logo_symbol.png" alt="GADES">
+      <span>Fundación GADES</span>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link active" href="#">Inicio</a>
+      <a class="nav-link" href="#">Nosotros</a>
+      <a class="nav-link" href="#">Proyectos</a>
+      <a class="nav-link" href="#">Servicios</a>
+      <a class="nav-link" href="#">Contacto</a>
+    </div>
+    <a class="nav-cta" href="#">Contáctenos</a>
+  </nav>
+</body></html>
