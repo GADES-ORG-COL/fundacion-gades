@@ -179,7 +179,6 @@ const investorTracks = [
       label: "Portafolio de alianzas institucionales",
       href: `mailto:${contactEmail}?subject=Portafolio%20de%20alianzas%20institucionales`,
     },
-    secondary: { label: "Trayectoria documental", href: "/respaldo" },
   },
 ];
 
@@ -447,45 +446,6 @@ export default function HomePage() {
               </p>
             </article>
           </div>
-
-          <div className="mt-20">
-            <h3 className="text-2xl font-semibold text-[var(--ink-strong)] sm:text-3xl">
-              Trayectoria documental
-            </h3>
-            <p className="mt-3 max-w-xl text-sm leading-7 text-[var(--ink-body)]">
-              Cuatro hitos registrados en Notaría y Cámara de Comercio.
-            </p>
-
-            <div className="relative mt-12">
-              <div
-                aria-hidden
-                className="pointer-events-none absolute left-6 right-6 top-[1.35rem] hidden h-px bg-[linear-gradient(90deg,transparent,var(--brand-green)_18%,var(--brand-teal)_82%,transparent)] lg:block"
-              />
-              <ol className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-                {timeline.map((item, index) => (
-                  <Reveal
-                    key={item.year}
-                    className="relative rounded-2xl border border-[var(--line-strong)] bg-white p-6 pt-9 shadow-sm"
-                    delay={0.04 + index * 0.04}
-                  >
-                    <span
-                      aria-hidden
-                      className="absolute left-6 top-5 hidden h-2.5 w-2.5 rounded-full bg-white ring-2 ring-[var(--brand-green)] lg:block"
-                    />
-                    <span className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-[var(--brand-green-dark)]">
-                      {item.year}
-                    </span>
-                    <h4 className="mt-3 text-base font-semibold leading-snug text-[var(--ink-strong)]">
-                      {item.title}
-                    </h4>
-                    <p className="mt-3 text-sm leading-7 text-[var(--ink-body)]">
-                      {item.body}
-                    </p>
-                  </Reveal>
-                ))}
-              </ol>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -689,12 +649,14 @@ export default function HomePage() {
                   >
                     {track.primary.label}
                   </a>
-                  <a
-                    className="text-sm font-medium text-[var(--brand-blue)] underline underline-offset-[6px] decoration-[var(--brand-blue)]/30 transition hover:decoration-[var(--brand-blue)]"
-                    href={track.secondary.href}
-                  >
-                    {track.secondary.label}
-                  </a>
+                  {track.secondary && (
+                    <a
+                      className="text-sm font-medium text-[var(--brand-blue)] underline underline-offset-[6px] decoration-[var(--brand-blue)]/30 transition hover:decoration-[var(--brand-blue)]"
+                      href={track.secondary.href}
+                    >
+                      {track.secondary.label}
+                    </a>
+                  )}
                 </div>
               </Reveal>
             ))}
